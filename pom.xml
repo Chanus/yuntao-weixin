@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.chanus</groupId>
+  <artifactId>yuntao-weixin</artifactId>
+  <version>1.0.0</version>
+  <name>${project.artifactId}</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- 项目编码格式 -->
+    <project.encoding>UTF-8</project.encoding>
+    <!-- 不执行测试用例，也不编译测试用例类 -->
+    <maven.test.skip>true</maven.test.skip>
+    <!-- JDK版本 -->
+    <jdk.version>1.8</jdk.version>
+    <!-- 阿里巴巴 Fast Json -->
+    <fastjson.version>1.2.68</fastjson.version>
+    <!-- 读写XML -->
+    <dom4j.version>1.6.1</dom4j.version>
+    <!-- 云道工具类 -->
+    <yuntao.utils.version>1.0.0</yuntao.utils.version>
+    <!-- 单元测试 -->
+    <junit.version>4.12</junit.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 阿里巴巴 Fast Json -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+    <!-- 读写XML -->
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>${dom4j.version}</version>
+    </dependency>
+    <!-- 云道工具类 -->
+    <dependency>
+      <groupId>com.chanus</groupId>
+      <artifactId>yuntao-utils-core</artifactId>
+      <version>${yuntao.utils.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- 资源配置插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <!-- <version>3.0.2</version> -->
+        <configuration>
+          <encoding>${project.encoding}</encoding>
+        </configuration>
+      </plugin>
+      <!-- 编译插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <!-- <version>3.6.2</version> -->
+        <configuration>
+          <compilerVersion>${jdk.version}</compilerVersion>
+          <source>${jdk.version}</source> <!-- 源代码使用的开发版本 -->
+          <target>${jdk.version}</target> <!-- 需要生成的目标class文件的编译版本 -->
+          <encoding>${project.encoding}</encoding>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+      <!-- jar包插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <!-- <version>3.0.2</version> -->
+        <configuration>
+          <archive>
+            <index>true</index>
+          </archive>
+        </configuration>
+      </plugin>
+      <!-- 打包源文件插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <attach>true</attach>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
