@@ -122,8 +122,8 @@ public class DataCubeApi {
     /**
      * 获取用户增减数据，最大时间跨度为7天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date  和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserSummary(String beginDate, String endDate) {
@@ -141,8 +141,8 @@ public class DataCubeApi {
     /**
      * 获取累计用户数据，最大时间跨度为7天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserCumulate(String beginDate, String endDate) {
@@ -160,8 +160,8 @@ public class DataCubeApi {
     /**
      * 获取图文群发每日数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getArticleSummary(String beginDate, String endDate) {
@@ -179,8 +179,8 @@ public class DataCubeApi {
     /**
      * 获取图文群发总数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getArticleTotal(String beginDate, String endDate) {
@@ -198,8 +198,8 @@ public class DataCubeApi {
     /**
      * 获取图文统计数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserRead(String beginDate, String endDate) {
@@ -217,8 +217,8 @@ public class DataCubeApi {
     /**
      * 获取图文统计分时数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserReadHour(String beginDate, String endDate) {
@@ -236,8 +236,8 @@ public class DataCubeApi {
     /**
      * 获取图文分享转发数据，最大时间跨度为7天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserShare(String beginDate, String endDate) {
@@ -255,8 +255,8 @@ public class DataCubeApi {
     /**
      * 获取图文分享转发分时数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUserShareHour(String beginDate, String endDate) {
@@ -274,8 +274,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送概况数据，最大时间跨度为7天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsg(String beginDate, String endDate) {
@@ -293,8 +293,8 @@ public class DataCubeApi {
     /**
      * 获取消息分送分时数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgHour(String beginDate, String endDate) {
@@ -312,8 +312,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送周数据，最大时间跨度为30天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgWeek(String beginDate, String endDate) {
@@ -331,8 +331,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送月数据，最大时间跨度为30天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgMonth(String beginDate, String endDate) {
@@ -350,8 +350,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送分布数据，最大时间跨度为15天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgDist(String beginDate, String endDate) {
@@ -369,8 +369,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送分布周数据，最大时间跨度为30天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgDistWeek(String beginDate, String endDate) {
@@ -388,8 +388,8 @@ public class DataCubeApi {
     /**
      * 获取消息发送分布月数据，最大时间跨度为30天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
      */
     public static JSONObject getUpStreamMsgDistMonth(String beginDate, String endDate) {
@@ -413,7 +413,6 @@ public class DataCubeApi {
      * @param endDate   获取数据的结束时间 yyyy-mm-dd
      * @param adSlot    广告位类型名称
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject publisherAdPosGeneral(int page, int pageSize, String startDate, String endDate, String adSlot) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -438,7 +437,6 @@ public class DataCubeApi {
      * @param startDate 获取数据的开始时间 yyyy-mm-dd
      * @param endDate   获取数据的结束时间 yyyy-mm-dd
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject publisherCpsGeneral(int page, int pageSize, String startDate, String endDate) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -462,7 +460,6 @@ public class DataCubeApi {
      * @param startDate 获取数据的开始时间 yyyy-mm-dd
      * @param endDate   获取数据的结束时间 yyyy-mm-dd
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject publisherSettlement(int page, int pageSize, String startDate, String endDate) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -481,10 +478,9 @@ public class DataCubeApi {
     /**
      * 获取接口分析数据，最大时间跨度为30天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getInterfaceSummary(String beginDate, String endDate) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -501,10 +497,9 @@ public class DataCubeApi {
     /**
      * 获取接口分析分时数据，最大时间跨度为1天
      *
-     * @param beginDate 获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错
-     * @param endDate   获取数据的结束日期，end_date允许设置的最大值为昨日
+     * @param beginDate 获取数据的起始日期，begin_date 和 end_date 的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date 和 end_date 的差值只能为0，才能小于1），否则会报错
+     * @param endDate   获取数据的结束日期，end_date 允许设置的最大值为昨日
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getInterfaceSummaryHour(String beginDate, String endDate) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

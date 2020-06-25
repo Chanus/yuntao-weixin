@@ -37,7 +37,6 @@ public class AutoReplyInfoApi {
      * 获取自动回复规则
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getCurrentAutoreplyInfo() {
         String accessToken = AccessTokenApi.getAccessTokenStr();

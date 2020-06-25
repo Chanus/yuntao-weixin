@@ -45,7 +45,7 @@ public class WXConfig implements Serializable {
      */
     private String encodingAESKey;
     /**
-     * 消息加解密方式，{@code false}表示明文模式，{@code true}表示安全模式，默认为明文模式
+     * 消息加解密方式，{@code false} 表示明文模式，{@code true} 表示安全模式，默认为明文模式
      */
     private boolean messageEncrypt = false;
 

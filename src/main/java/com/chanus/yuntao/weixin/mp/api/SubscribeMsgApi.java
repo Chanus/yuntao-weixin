@@ -44,13 +44,12 @@ public class SubscribeMsgApi {
     /**
      * 生成用户授权的 url 链接
      *
-     * @param scene       重定向后会带上scene参数，开发者可以填0-10000的整形值，用来标识订阅场景值
-     * @param templateId  订阅消息模板ID，登录公众平台后台，在接口权限列表处可查看订阅模板ID
-     * @param redirectUrl 授权后重定向的回调地址，请使用UrlEncode对链接进行处理。注：要求 redirect_url 的域名要跟登记的业务域名一致，且业务域名不能带路径。业务域名需登录公众号，在设置-公众号设置-功能设置里面对业务域名设置
+     * @param scene       重定向后会带上 scene 参数，开发者可以填0-10000的整形值，用来标识订阅场景值
+     * @param templateId  订阅消息模板 ID，登录公众平台后台，在接口权限列表处可查看订阅模板 ID
+     * @param redirectUrl 授权后重定向的回调地址，请使用 UrlEncode 对链接进行处理。注：要求 redirect_url 的域名要跟登记的业务域名一致，且业务域名不能带路径。业务域名需登录公众号，在设置-公众号设置-功能设置里面对业务域名设置
      * @param reserved    用于保持请求和回调的状态，授权请后原样带回给第三方。该参数可用于防止 csrf 攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加 session 进行校验，开发者可以填写 a-zA-Z0-9 的参数值，最多128字节，要求做 urlencode
      * @return 用户授权的 url 链接
      * @throws UnsupportedEncodingException {@code UnsupportedEncodingException}
-     * @since 1.0.0
      */
     public static String getAuthorizeURL(int scene, String templateId, String redirectUrl, String reserved) throws UnsupportedEncodingException {
         StringBuilder stringBuilder = new StringBuilder();
@@ -71,7 +70,6 @@ public class SubscribeMsgApi {
      *
      * @param json 订阅模板消息数据 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject subscribe(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

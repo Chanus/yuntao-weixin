@@ -67,7 +67,6 @@ public class NewsCommentApi {
      * @param msgDataId 群发返回的 msg_data_id
      * @param index     多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject open(long msgDataId, Integer index) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -88,7 +87,6 @@ public class NewsCommentApi {
      * @param msgDataId 群发返回的 msg_data_id
      * @param index     多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject close(long msgDataId, Integer index) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -112,7 +110,6 @@ public class NewsCommentApi {
      * @param count     获取数目（>=50会被拒绝）
      * @param type      type=0 普通评论&精选评论 type=1 普通评论 type=2 精选评论
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject list(long msgDataId, Integer index, int begin, int count, int type) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -137,7 +134,6 @@ public class NewsCommentApi {
      * @param index         多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
      * @param userCommentId 用户评论id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject markElect(long msgDataId, Integer index, int userCommentId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -160,7 +156,6 @@ public class NewsCommentApi {
      * @param index         多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
      * @param userCommentId 用户评论id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject unmarkElect(long msgDataId, Integer index, int userCommentId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -181,9 +176,8 @@ public class NewsCommentApi {
      *
      * @param msgDataId     群发返回的 msg_data_id
      * @param index         多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
-     * @param userCommentId 用户评论id
+     * @param userCommentId 用户评论 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delete(long msgDataId, Integer index, int userCommentId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -204,10 +198,9 @@ public class NewsCommentApi {
      *
      * @param msgDataId     群发返回的 msg_data_id
      * @param index         多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
-     * @param userCommentId 用户评论id
+     * @param userCommentId 用户评论 id
      * @param content       回复内容
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject reply(long msgDataId, Integer index, int userCommentId, String content) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -229,9 +222,8 @@ public class NewsCommentApi {
      *
      * @param msgDataId     群发返回的 msg_data_id
      * @param index         多图文时，用来指定第几篇图文，从0开始，不带默认操作该 msg_data_id 的第一篇图文
-     * @param userCommentId 用户评论id
+     * @param userCommentId 用户评论 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject deleteReply(long msgDataId, Integer index, int userCommentId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

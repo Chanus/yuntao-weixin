@@ -69,7 +69,6 @@ public class UserTagApi {
      *
      * @param name 标签名（30个字符以内）
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject create(String name) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -89,7 +88,6 @@ public class UserTagApi {
      * 获取公众号已创建的标签
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject get() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -106,7 +104,6 @@ public class UserTagApi {
      * @param id   标签id
      * @param name 标签名（30个字符以内）
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject update(int id, String name) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -128,7 +125,6 @@ public class UserTagApi {
      *
      * @param id 标签id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delete(int id) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -148,9 +144,8 @@ public class UserTagApi {
      * 获取标签下粉丝列表
      *
      * @param tagId      标签id
-     * @param nextOpenId 第一个拉取的OPENID，不填默认从头开始拉取
+     * @param nextOpenId 第一个拉取的 OPENID，不填默认从头开始拉取
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getTagUsers(int tagId, String nextOpenId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -169,10 +164,9 @@ public class UserTagApi {
     /**
      * 批量为用户打标签
      *
-     * @param tagId      标签id
+     * @param tagId      标签 id
      * @param openIdList 粉丝列表
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchTagging(int tagId, List<String> openIdList) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -190,10 +184,9 @@ public class UserTagApi {
     /**
      * 批量为用户取消标签
      *
-     * @param tagId      标签id
+     * @param tagId      标签 id
      * @param openIdList 粉丝列表
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchUntagging(int tagId, List<String> openIdList) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -213,7 +206,6 @@ public class UserTagApi {
      *
      * @param openId 用户 openid
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getUserTags(String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

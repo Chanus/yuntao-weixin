@@ -261,7 +261,6 @@ public class ErrorMsg {
      *
      * @param errcode 错误码
      * @return 错误信息
-     * @since 1.0.0
      */
     public static String get(int errcode) {
         return errorMsg.get(errcode);

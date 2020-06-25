@@ -115,7 +115,7 @@ public class MediaApi {
     /**
      * 获取临时素材
      *
-     * @param mediaId 媒体文件ID
+     * @param mediaId 媒体文件 ID
      * @return 临时素材输入流
      */
     public static BufferedInputStream getMedia(String mediaId) {
@@ -128,7 +128,7 @@ public class MediaApi {
     /**
      * 获取临时素材
      *
-     * @param mediaId 媒体文件ID
+     * @param mediaId 媒体文件 ID
      * @param path    媒体文件保存路径
      * @return 临时素材文件
      */
@@ -142,7 +142,7 @@ public class MediaApi {
     /**
      * 获取高清语音素材
      *
-     * @param mediaId 媒体文件ID
+     * @param mediaId 媒体文件 ID
      * @return 高清语音素材输入流
      */
     public static BufferedInputStream getJsSdkMedia(String mediaId) {
@@ -155,7 +155,7 @@ public class MediaApi {
     /**
      * 获取高清语音素材
      *
-     * @param mediaId 媒体文件ID
+     * @param mediaId 媒体文件 ID
      * @param path    媒体文件保存路径
      * @return 高清语音素材文件
      */
@@ -183,7 +183,7 @@ public class MediaApi {
 
     /**
      * 上传图文消息内的图片获取URL<br>
-     * 本接口所上传的图片不占用公众号的素材库中图片数量的100000个的限制。图片仅支持jpg/png格式，大小必须在1MB以下
+     * 本接口所上传的图片不占用公众号的素材库中图片数量的100000个的限制。图片仅支持 jpg/png 格式，大小必须在1MB以下
      *
      * @param file 图片文件
      * @return 请求结果的 json 对象

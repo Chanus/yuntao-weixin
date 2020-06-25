@@ -106,7 +106,7 @@ public class Menu implements Serializable {
 
     public static class MenuButton {
         /**
-         * 菜单的响应动作类型，view表示网页类型，click表示点击类型，miniprogram表示小程序类型
+         * 菜单的响应动作类型，view 表示网页类型，click  表示点击类型，miniprogram 表示小程序类型
          */
         private String type;
         /**
@@ -118,15 +118,15 @@ public class Menu implements Serializable {
          */
         private String key;
         /**
-         * 网页链接，用户点击菜单可打开链接，不超过1024字节。 type为miniprogram时，不支持小程序的老版本客户端将打开本url
+         * 网页链接，用户点击菜单可打开链接，不超过1024字节。 type 为 miniprogram 时，不支持小程序的老版本客户端将打开本 url
          */
         private String url;
         /**
-         * 调用新增永久素材接口返回的合法media_id
+         * 调用新增永久素材接口返回的合法 media_id
          */
         private String media_id;
         /**
-         * 小程序的appid（仅认证公众号可配置）
+         * 小程序的 appid（仅认证公众号可配置）
          */
         private String appid;
         /**
@@ -273,7 +273,7 @@ public class Menu implements Serializable {
      */
     public static class MatchRule {
         /**
-         * 用户标签的id，可通过用户标签管理接口获取
+         * 用户标签的 id，可通过用户标签管理接口获取
          */
         private String tag_id;
         /**
@@ -293,7 +293,7 @@ public class Menu implements Serializable {
          */
         private String city;
         /**
-         * 客户端版本，当前只具体到系统型号：IOS(1), Android(2),Others(3)，不填则不做匹配
+         * 客户端版本，当前只具体到系统型号：IOS(1), Android(2)，Others(3)，不填则不做匹配
          */
         private String client_platform_type;
         /**

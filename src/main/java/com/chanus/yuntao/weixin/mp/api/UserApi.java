@@ -45,7 +45,7 @@ public class UserApi {
      */
     private static final String UPDATE_REMARK_URL = "https://api.weixin.qq.com/cgi-bin/user/info/updateremark?access_token=ACCESS_TOKEN";
     /**
-     * 获取用户基本信息（包括UnionID机制） url，请求方式为 GET
+     * 获取用户基本信息（包括 UnionID 机制） url，请求方式为 GET
      */
     private static final String USER_INFO_URL = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
     /**
@@ -63,7 +63,6 @@ public class UserApi {
      * @param openId 用户标识
      * @param remark 新的备注名，长度必须小于30字符
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject updateRemark(String openId, String remark) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -79,11 +78,10 @@ public class UserApi {
     }
 
     /**
-     * 获取用户基本信息（包括UnionID机制）
+     * 获取用户基本信息（包括 UnionID 机制）
      *
      * @param openId 普通用户的标识，对当前公众号唯一
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getUserInfo(String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -99,7 +97,6 @@ public class UserApi {
      *
      * @param nextOpenid 第一个拉取的 OPENID，不填默认从头开始拉取
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getUsers(String nextOpenid) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -116,7 +113,6 @@ public class UserApi {
      * 获取用户列表
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getUsers() {
         return getUsers(null);
@@ -127,7 +123,6 @@ public class UserApi {
      *
      * @param json json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchGetUserInfo(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -143,7 +138,6 @@ public class UserApi {
      *
      * @param openIdList openid 列表
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchGetUserInfo(List<String> openIdList) {
         JSONObject jsonObject = new JSONObject();

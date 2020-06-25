@@ -50,7 +50,6 @@ public class BlackUserApi {
      *
      * @param beginOpenid 当 begin_openid 为空时，默认从开头拉取
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getBlackList(String beginOpenid) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -69,7 +68,6 @@ public class BlackUserApi {
      * 获取公众号的黑名单列表
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getBlackList() {
         return getBlackList(null);
@@ -80,7 +78,6 @@ public class BlackUserApi {
      *
      * @param json json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchBlackUsers(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -96,7 +93,6 @@ public class BlackUserApi {
      *
      * @param openIdList 需要拉入黑名单的用户的 openid，一次拉黑最多允许20个
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchBlackUsers(List<String> openIdList) throws IllegalArgumentException {
         if (CollectionUtils.isEmpty(openIdList)) {
@@ -114,7 +110,6 @@ public class BlackUserApi {
      *
      * @param json json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchUnblackUsers(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -130,7 +125,6 @@ public class BlackUserApi {
      *
      * @param openIdList 需要取消拉黑的用户 openid，一次取消拉黑最多允许20个
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchUnblackUsers(List<String> openIdList) throws IllegalArgumentException {
         if (CollectionUtils.isEmpty(openIdList)) {

@@ -62,7 +62,7 @@ public class AccessTokenApi {
             return accessToken;
 
         String url = TOKEN_URL.replace("APPID", wxConfig.getAppId()).replace("APPSECRET", wxConfig.getAppSecret());
-        // 发起GET请求获取凭证
+        // 发起 GET 请求获取凭证
         String result = HttpUtils.get(url);
         AccessToken token = null;
         if (StringUtils.isNotBlank(result)) {

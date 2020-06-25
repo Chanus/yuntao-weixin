@@ -37,7 +37,6 @@ public class XMLParse {
      *
      * @param xml 待提取的 xml 字符串
      * @return 提取出的加密消息字符串
-     * @since 1.0.0
      */
     public static Object[] extract(String xml) {
         Object[] result = new Object[3];
@@ -66,7 +65,6 @@ public class XMLParse {
      *
      * @param xml xml 字符串
      * @return Map
-     * @since 1.0.0
      */
     public static Map<String, String> parseXmlToMap(String xml) {
         Map<String, String> map = new HashMap<>();
@@ -96,7 +94,6 @@ public class XMLParse {
      * @param timestamp 时间戳
      * @param nonce     随机字符串
      * @return 生成的 xml 字符串
-     * @since 1.0.0
      */
     public static String generate(String encrypt, String signature, String timestamp, String nonce) {
 

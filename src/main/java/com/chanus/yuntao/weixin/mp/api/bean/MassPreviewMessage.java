@@ -30,11 +30,11 @@ public class MassPreviewMessage implements Serializable {
     private static final long serialVersionUID = -3586688431164347067L;
 
     /**
-     * 接收消息用户对应该公众号的openid
+     * 接收消息用户对应该公众号的 openid
      */
     private String touser;
     /**
-     * 接收消息用户对应该公众号的openid，以实现对微信号的预览
+     * 接收消息用户对应该公众号的 openid，以实现对微信号的预览
      */
     private String towxname;
     /**
@@ -62,7 +62,7 @@ public class MassPreviewMessage implements Serializable {
      */
     private WxCard wxcard;
     /**
-     * 群发的消息类型，图文消息为mpnews，文本消息为text，语音为voice，音乐为music，图片为image，视频为mpvideo，卡券为wxcard
+     * 群发的消息类型，图文消息为 mpnews，文本消息为 text，语音为 voice，音乐为 music，图片为 image，视频为 mpvideo，卡券为 wxcard
      */
     private String msgtype;
 
@@ -200,7 +200,6 @@ public class MassPreviewMessage implements Serializable {
      * 创建一个群发预览消息的对象实例
      *
      * @return 群发预览消息的对象实例
-     * @since 1.0.0
      */
     public static MassPreviewMessage create() {
         return new MassPreviewMessage();
@@ -209,9 +208,8 @@ public class MassPreviewMessage implements Serializable {
     /**
      * 创建一个群发预览消息的对象实例
      *
-     * @param touser  接收消息用户对应该公众号的openid
+     * @param touser 接收消息用户对应该公众号的 openid
      * @return 群发预览消息的对象实例
-     * @since 1.0.0
      */
     public static MassPreviewMessage create(String touser) {
         return new MassPreviewMessage(touser);
@@ -221,7 +219,6 @@ public class MassPreviewMessage implements Serializable {
      * 将当前对象转化成 json 字符串
      *
      * @return json 字符串
-     * @since 1.0.0
      */
     public String toJSONString() {
         return JSON.toJSONString(this);
@@ -232,7 +229,7 @@ public class MassPreviewMessage implements Serializable {
      */
     public static class MpNews {
         /**
-         * 用于群发的消息的media_id
+         * 用于群发的消息的 media_id
          */
         private String media_id;
 
@@ -284,7 +281,7 @@ public class MassPreviewMessage implements Serializable {
      */
     public static class Voice {
         /**
-         * 语音/音频素材ID
+         * 语音/音频素材 ID
          */
         private String media_id;
 
@@ -310,7 +307,7 @@ public class MassPreviewMessage implements Serializable {
      */
     public static class Image {
         /**
-         * 图片素材ID
+         * 图片素材 ID
          */
         private String media_id;
 
@@ -336,7 +333,7 @@ public class MassPreviewMessage implements Serializable {
      */
     public static class MpVideo {
         /**
-         * 视频素材ID
+         * 视频素材 ID
          */
         private String media_id;
 
@@ -362,7 +359,7 @@ public class MassPreviewMessage implements Serializable {
      */
     public static class WxCard {
         /**
-         * 卡券ID
+         * 卡券 ID
          */
         private String card_id;
         /**

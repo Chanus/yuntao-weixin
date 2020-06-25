@@ -64,7 +64,7 @@ public class MassMessage implements Serializable {
      */
     private WxCard wxcard;
     /**
-     * 群发的消息类型，图文消息为mpnews，文本消息为text，语音为voice，音乐为music，图片为image，视频为mpvideo，卡券为wxcard
+     * 群发的消息类型，图文消息为 mpnews，文本消息为 text，语音为 voice，音乐为 music，图片为 image，视频为 mpvideo，卡券为 wxcard
      */
     private String msgtype;
     /**
@@ -72,7 +72,7 @@ public class MassMessage implements Serializable {
      */
     private Integer send_ignore_reprint;
     /**
-     * 开发者侧群发msgid，长度限制64字节，如不填，则后台默认以群发范围和群发内容的摘要值做为clientmsgid
+     * 开发者侧群发 msgid，长度限制64字节，如不填，则后台默认以群发范围和群发内容的摘要值做为 clientmsgid
      */
     private String clientmsgid;
 
@@ -271,7 +271,7 @@ public class MassMessage implements Serializable {
     /**
      * 创建一个群发消息的对象实例
      *
-     * @param is_to_all 用于设定是否向全部用户发送，值为true或false，选择true该消息群发给所有用户，选择false可根据tag_id发送给指定群组的用户
+     * @param is_to_all 用于设定是否向全部用户发送，值为 true 或 false，选择 true 该消息群发给所有用户，选择 false 可根据 tag_id 发送给指定群组的用户
      * @return 群发消息的对象实例
      */
     public static MassMessage create(boolean is_to_all) {
@@ -279,9 +279,9 @@ public class MassMessage implements Serializable {
     }
 
     /**
-     * 创建一个群发消息的对象实例，is_to_all 默认为false
+     * 创建一个群发消息的对象实例，is_to_all 默认为 false
      *
-     * @param tag_id 群发到的标签的tag_id
+     * @param tag_id 群发到的标签的 tag_id
      * @return 群发消息的对象实例
      */
     public static MassMessage create(Integer tag_id) {
@@ -291,7 +291,7 @@ public class MassMessage implements Serializable {
     /**
      * 创建一个群发消息的对象实例
      *
-     * @param touser 图文消息的接收者，一串OpenID列表，OpenID最少2个，最多10000个
+     * @param touser 图文消息的接收者，一串 OpenID 列表，OpenID 最少2个，最多10000个
      * @return 群发消息的对象实例
      */
     public static MassMessage create(List<String> touser) {
@@ -312,11 +312,11 @@ public class MassMessage implements Serializable {
      */
     public static class Filter {
         /**
-         * 用于设定是否向全部用户发送，值为true或false，选择true该消息群发给所有用户，选择false可根据tag_id发送给指定群组的用户
+         * 用于设定是否向全部用户发送，值为 true 或 false，选择 true 该消息群发给所有用户，选择 false 可根据 tag_id 发送给指定群组的用户
          */
         private boolean is_to_all;
         /**
-         * 群发到的标签的tag_id，参见用户管理中用户分组接口，若is_to_all值为true，可不填写tag_id
+         * 群发到的标签的 tag_id，参见用户管理中用户分组接口，若 is_to_all 值为true，可不填写tag_id
          */
         private Integer tag_id;
 

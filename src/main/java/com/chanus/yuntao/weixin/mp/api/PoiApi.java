@@ -58,7 +58,6 @@ public class PoiApi {
      *
      * @param json 门店信息数据
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject addPoi(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -71,9 +70,8 @@ public class PoiApi {
     /**
      * 查询门店信息
      *
-     * @param poiId 门店的poi_id
+     * @param poiId 门店的 poi_id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getPoi(String poiId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -92,7 +90,6 @@ public class PoiApi {
      * @param begin 开始位置，0 即为从第一条开始查询
      * @param limit 返回数据条数，最大允许50，默认为20
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getPoiList(int begin, int limit) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -115,7 +112,6 @@ public class PoiApi {
      *
      * @param json 门店信息数据
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject updatePoi(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -128,9 +124,8 @@ public class PoiApi {
     /**
      * 删除门店
      *
-     * @param poiId 门店的poi_id
+     * @param poiId 门店的 poi_id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delPoi(String poiId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -147,7 +142,6 @@ public class PoiApi {
      * 获取门店类目表
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getWxCategory() {
         String accessToken = AccessTokenApi.getAccessTokenStr();

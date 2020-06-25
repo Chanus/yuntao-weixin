@@ -107,9 +107,8 @@ public class CustomServiceApi {
      *
      * @param kfAccount 完整客服帐号，格式为：帐号前缀@公众号微信号，帐号前缀最多10个字符，必须是英文、数字字符或者下划线，后缀为公众号微信号，长度不超过30个字符
      * @param nickname  客服昵称，最长6个汉字或12个英文字符
-     * @param password  客服账号登录密码，格式为密码明文的32位加密MD5值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
+     * @param password  客服账号登录密码，格式为密码明文的32位加密 MD5 值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject addKfAccount(String kfAccount, String nickname, String password) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -131,7 +130,6 @@ public class CustomServiceApi {
      * @param kfAccount 完整客服帐号，格式为：帐号前缀@公众号微信号
      * @param inviteWx  接收绑定邀请的客服微信号
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject inviteWorker(String kfAccount, String inviteWx) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -151,9 +149,8 @@ public class CustomServiceApi {
      *
      * @param kfAccount 完整客服账号，格式为：账号前缀@公众号微信号
      * @param nickname  客服昵称，最长6个汉字或12个英文字符
-     * @param password  客服账号登录密码，格式为密码明文的32位加密MD5值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
+     * @param password  客服账号登录密码，格式为密码明文的32位加密 MD5 值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject updateKfAccount(String kfAccount, String nickname, String password) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -174,9 +171,8 @@ public class CustomServiceApi {
      *
      * @param kfAccount 完整客服账号，格式为：账号前缀@公众号微信号
      * @param nickname  客服昵称，最长6个汉字或12个英文字符
-     * @param password  客服账号登录密码，格式为密码明文的32位加密MD5值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
+     * @param password  客服账号登录密码，格式为密码明文的32位加密 MD5 值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delKfAccount(String kfAccount, String nickname, String password) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -196,9 +192,8 @@ public class CustomServiceApi {
      * 设置客服帐号的头像
      *
      * @param kfAccount 完整客服账号，格式为：账号前缀@公众号微信号
-     * @param headImg   客服人员的头像，头像图片文件必须是jpg格式，推荐使用640*640大小的图片以达到最佳效果
+     * @param headImg   客服人员的头像，头像图片文件必须是 jpg 格式，推荐使用640*640大小的图片以达到最佳效果
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject uploadKfAccountHeadImg(String kfAccount, File headImg) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -213,7 +208,6 @@ public class CustomServiceApi {
      * 获取所有客服信息
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getKfList() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -228,7 +222,6 @@ public class CustomServiceApi {
      * 获取所有在线客服信息
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getOnlineKfList() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -244,7 +237,6 @@ public class CustomServiceApi {
      *
      * @param json 发送的消息数据的 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject send(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -260,7 +252,6 @@ public class CustomServiceApi {
      *
      * @param touser 普通用户（openid）
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject typing(String touser) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -281,7 +272,6 @@ public class CustomServiceApi {
      * @param kfAccount 完整客服帐号，格式为：帐号前缀@公众号微信号
      * @param openId    粉丝的openid
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject createKfSession(String kfAccount, String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -300,9 +290,8 @@ public class CustomServiceApi {
      * 关闭会话
      *
      * @param kfAccount 完整客服帐号，格式为：帐号前缀@公众号微信号
-     * @param openId    粉丝的openid
+     * @param openId    粉丝的 openid
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject closeKfSession(String kfAccount, String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -320,9 +309,8 @@ public class CustomServiceApi {
     /**
      * 获取客户会话状态
      *
-     * @param openId 粉丝的openid
+     * @param openId 粉丝的 openid
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getSession(String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -338,7 +326,6 @@ public class CustomServiceApi {
      *
      * @param kfAccount 完整客服帐号，格式为：帐号前缀@公众号微信号
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getSessionList(String kfAccount) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -353,7 +340,6 @@ public class CustomServiceApi {
      * 获取未接入会话列表
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getWaitCase() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -367,12 +353,11 @@ public class CustomServiceApi {
     /**
      * 获取聊天记录
      *
-     * @param startTime 起始时间，unix时间戳
-     * @param endTime   结束时间，unix时间戳，每次查询时段不能超过24小时
-     * @param msgId     消息id顺序从小到大，从1开始
+     * @param startTime 起始时间，UNIX 时间戳
+     * @param endTime   结束时间，UNIX 时间戳，每次查询时段不能超过24小时
+     * @param msgId     消息 id 顺序从小到大，从1开始
      * @param number    每次获取条数，最多10000条
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getMsgList(long startTime, long endTime, int msgId, int number) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -392,12 +377,11 @@ public class CustomServiceApi {
     /**
      * 获取客服聊天记录接口
      *
-     * @param startTime 查询开始时间，UNIX时间戳
-     * @param endTime   查询结束时间，UNIX时间戳，每次查询不能跨日查询
+     * @param startTime 查询开始时间，UNIX 时间戳
+     * @param endTime   查询结束时间，UNIX 时间戳，每次查询不能跨日查询
      * @param pageIndex 查询第几页，从1开始
      * @param pageSize  每页大小，每页最多拉取50条
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getRecord(long startTime, long endTime, int pageIndex, int pageSize) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

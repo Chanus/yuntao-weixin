@@ -64,7 +64,6 @@ public class GroupsApi {
      *
      * @param name 分组名字（30个字符以内）
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject create(String name) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -84,7 +83,6 @@ public class GroupsApi {
      * 查询所有分组
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject get() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -98,9 +96,8 @@ public class GroupsApi {
     /**
      * 查询用户所在分组，通过用户的 OpenID 查询其所在的 GroupID
      *
-     * @param openId 用户的OpenID
+     * @param openId 用户的 OpenID
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getUserGroupId(String openId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -120,7 +117,6 @@ public class GroupsApi {
      * @param id   分组id，由微信分配
      * @param name 分组名字（30个字符以内）
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject update(int id, String name) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -141,9 +137,8 @@ public class GroupsApi {
      * 移动用户分组
      *
      * @param openId    用户唯一标识符
-     * @param toGroupId 分组id
+     * @param toGroupId 分组 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject updateUserGroups(String openId, int toGroupId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -161,10 +156,9 @@ public class GroupsApi {
     /**
      * 批量移动用户分组
      *
-     * @param openIdList 用户唯一标识符openid的列表（size不能超过50）
-     * @param toGroupId  分组id
+     * @param openIdList 用户唯一标识符 openid 的列表（size 不能超过50）
+     * @param toGroupId  分组 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject batchUpdateUserGroups(List<String> openIdList, int toGroupId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -182,9 +176,8 @@ public class GroupsApi {
     /**
      * 删除分组，注意本接口是删除一个用户分组，删除分组后，所有该分组内的用户自动进入默认分组
      *
-     * @param id 分组的id
+     * @param id 分组的 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delete(int id) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

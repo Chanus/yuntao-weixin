@@ -84,7 +84,7 @@ public class AccessToken implements RetryUtils.ResultCheck, Serializable {
     /**
      * 验证 access_token 是否有效
      *
-     * @return 返回{@code true} access_token 有效，返回{@code false} access_token 无效
+     * @return 返回{@code true} access_token 有效，返回 {@code false} access_token 无效
      */
     public boolean isAvailable() {
         if (errcode != null || expiredTime == null || expiredTime < System.currentTimeMillis())

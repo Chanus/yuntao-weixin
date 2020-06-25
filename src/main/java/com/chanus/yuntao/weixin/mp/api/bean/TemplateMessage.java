@@ -34,11 +34,11 @@ public class TemplateMessage implements Serializable {
      */
     private static final String DEFAULT_COLOR = "#173177";
     /**
-     * 接收者openid
+     * 接收者 openid
      */
     private String touser;
     /**
-     * 模板ID
+     * 模板 ID
      */
     private String template_id;
     /**
@@ -46,7 +46,7 @@ public class TemplateMessage implements Serializable {
      */
     private String url;
     /**
-     * 订阅场景值，重定向后会带上scene参数，开发者可以填0-10000的整形值，用来标识订阅场景值（推送一次性订阅消息时使用）
+     * 订阅场景值，重定向后会带上 scene 参数，开发者可以填0-10000的整形值，用来标识订阅场景值（推送一次性订阅消息时使用）
      */
     private String scene;
     /**
@@ -176,7 +176,7 @@ public class TemplateMessage implements Serializable {
      */
     public static class DataItem {
         /**
-         * value为消息内容文本
+         * value 为消息内容文本
          */
         private Object value;
         /**
@@ -218,11 +218,11 @@ public class TemplateMessage implements Serializable {
      */
     public static class MiniProgramData {
         /**
-         * 所需跳转到的小程序appid（该小程序appid必须与发模板消息的公众号是绑定关联关系，暂不支持小游戏）
+         * 所需跳转到的小程序 appid（该小程序 appid 必须与发模板消息的公众号是绑定关联关系，暂不支持小游戏）
          */
         private String appid;
         /**
-         * 所需跳转到小程序的具体页面路径，支持带参数,（示例index?foo=bar），要求该小程序已发布，暂不支持小游戏
+         * 所需跳转到小程序的具体页面路径，支持带参数,（示例 index?foo=bar），要求该小程序已发布，暂不支持小游戏
          */
         private String pagepath;
 

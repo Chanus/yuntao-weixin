@@ -77,7 +77,7 @@ public class Poi implements Serializable {
          */
         private String poi_id;
         /**
-         * 商户自己的id，用于后续审核通过收到poi_id 的通知时，做对应关系。请商户自己保证唯一识别性
+         * 商户自己的 id，用于后续审核通过收到 poi_id 的通知时，做对应关系。请商户自己保证唯一识别性
          */
         private String sid;
         /**
@@ -113,7 +113,7 @@ public class Poi implements Serializable {
          */
         private String[] categories;
         /**
-         * 坐标类型： 1 为火星坐标 2 为sogou经纬度 3 为百度经纬度 4 为mapbar经纬度 5 为GPS坐标 6 为sogou墨卡托坐标 注：高德经纬度无需转换可直接使用
+         * 坐标类型： 1 为火星坐标 2 为 sogou 经纬度 3 为百度经纬度 4 为 mapbar 经纬度 5 为 GPS 坐标 6 为 sogou 墨卡托坐标 注：高德经纬度无需转换可直接使用
          */
         private int offset_type;
         /**

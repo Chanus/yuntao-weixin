@@ -53,7 +53,7 @@ public class QrcodeApi {
     /**
      * 创建二维码 ticket
      *
-     * @param params POST数据
+     * @param params POST 数据
      * @return 二维码信息的 json 对象
      */
     private static JSONObject create(String params) {
@@ -68,7 +68,7 @@ public class QrcodeApi {
      * 创建临时二维码
      *
      * @param expireSeconds 该二维码有效时间，以秒为单位。 最大不超过2592000（即30天），此字段如果不填，则默认有效期为60秒
-     * @param sceneId       场景值ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
+     * @param sceneId       场景值 ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
      * @return 二维码信息的 json 对象
      */
     public static JSONObject createTemporary(int expireSeconds, int sceneId) {
@@ -90,7 +90,7 @@ public class QrcodeApi {
      * 创建临时二维码
      *
      * @param expireSeconds 该二维码有效时间，以秒为单位。 最大不超过2592000（即30天），此字段如果不填，则默认有效期为60秒
-     * @param sceneStr      场景值ID（字符串形式的ID），字符串类型，长度限制为1到64
+     * @param sceneStr      场景值 ID（字符串形式的ID），字符串类型，长度限制为1到64
      * @return 二维码信息的 json 对象
      */
     public static JSONObject createTemporary(int expireSeconds, String sceneStr) {
@@ -111,7 +111,7 @@ public class QrcodeApi {
     /**
      * 创建永久二维码
      *
-     * @param sceneId 场景值ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
+     * @param sceneId 场景值 ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
      * @return 二维码信息的 json 对象
      */
     public static JSONObject createPermanent(int sceneId) {
@@ -131,7 +131,7 @@ public class QrcodeApi {
     /**
      * 创建永久二维码
      *
-     * @param sceneStr 场景值ID（字符串形式的ID），字符串类型，长度限制为1到64
+     * @param sceneStr 场景值 ID（字符串形式的 ID），字符串类型，长度限制为1到64
      * @return 二维码信息的 json 对象
      */
     public static JSONObject createPermanent(String sceneStr) {
@@ -166,7 +166,7 @@ public class QrcodeApi {
     /**
      * 长链接转短链接接口
      *
-     * @param longUrl 需要转换的长链接，支持http://、https://、weixin://wxpay 格式的url
+     * @param longUrl 需要转换的长链接，支持 http://、https://、weixin://wxpay 格式的 url
      * @return 短连接信息
      */
     public static JSONObject getShortUrl(String longUrl) {
@@ -185,7 +185,7 @@ public class QrcodeApi {
     /**
      * 长链接转短链接接口
      *
-     * @param longUrl 需要转换的长链接，支持http://、https://、weixin://wxpay 格式的url
+     * @param longUrl 需要转换的长链接，支持 http://、https://、weixin://wxpay 格式的 url
      * @return 请求成功返回短连接 url，否则返回空
      */
     public static String getShortUrlStr(String longUrl) {

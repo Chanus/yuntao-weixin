@@ -36,7 +36,8 @@ public class CustomMessage implements Serializable {
      */
     private String touser;
     /**
-     * 消息类型，文本为text，图片为image，语音为voice，视频消息为video，音乐消息为music，图文消息（点击跳转到外链）为news，图文消息（点击跳转到图文消息页面）为mpnews，卡券为wxcard，小程序为miniprogrampage
+     * 消息类型，文本为 text，图片为 image，语音为 voice，视频消息为 video，音乐消息为 music，图文消息（点击跳转到外链）为 news，
+     * 图文消息（点击跳转到图文消息页面）为 mpnews，卡券为 wxcard，小程序为 miniprogrampage
      */
     private String msgtype;
     /**
@@ -307,7 +308,6 @@ public class CustomMessage implements Serializable {
      * @param touser     消息的接收者，普通用户 openid
      * @param kf_account 发消息的客服账号
      * @return CustomMessage 的对象实例
-     * @since 1.0.0
      */
     public static CustomMessage create(String touser, String kf_account) {
         return new CustomMessage(touser, kf_account);
@@ -317,7 +317,6 @@ public class CustomMessage implements Serializable {
      * 将当前对象转化成 json 字符串
      *
      * @return json 字符串
-     * @since 1.0.0
      */
     public String toJSONString() {
         return JSON.toJSONString(this);
@@ -410,7 +409,7 @@ public class CustomMessage implements Serializable {
          */
         private String media_id;
         /**
-         * 缩略图/小程序卡片图片的媒体ID，小程序卡片图片建议大小为520*416
+         * 缩略图/小程序卡片图片的媒体 ID，小程序卡片图片建议大小为520*416
          */
         private String thumb_media_id;
         /**
@@ -486,11 +485,11 @@ public class CustomMessage implements Serializable {
          */
         private String musicurl;
         /**
-         * 高品质音乐链接，wifi环境优先使用该链接播放音乐
+         * 高品质音乐链接，wifi 环境优先使用该链接播放音乐
          */
         private String hqmusicurl;
         /**
-         * 缩略图/小程序卡片图片的媒体ID，小程序卡片图片建议大小为520*416
+         * 缩略图/小程序卡片图片的媒体 ID，小程序卡片图片建议大小为520*416
          */
         private String thumb_media_id;
 
@@ -556,7 +555,7 @@ public class CustomMessage implements Serializable {
      */
     public static class News {
         /**
-         * 用于群发的消息的media_id
+         * 用于群发的消息的 media_id
          */
         private List<Articles> articles;
 
@@ -592,7 +591,7 @@ public class CustomMessage implements Serializable {
      */
     public static class MpNews {
         /**
-         * 用于群发的消息的media_id
+         * 用于群发的消息的 media_id
          */
         private String media_id;
 
@@ -627,7 +626,7 @@ public class CustomMessage implements Serializable {
          */
         private String url;
         /**
-         * 图文消息的图片链接，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80
+         * 图文消息的图片链接，支持 JPG、PNG 格式，较好的效果为大图640*320，小图80*80
          */
         private String picurl;
 
@@ -687,7 +686,7 @@ public class CustomMessage implements Serializable {
          */
         private String card_id;
         /**
-         * 本身是一个JSON字符串，是商户为该张卡券分配的唯一性信息<br>
+         * 本身是一个 JSON 字符串，是商户为该张卡券分配的唯一性信息<br>
          * 详情请见：http://caibaojian.com/wxwiki/0030551f015f01ecaa56d20b88ee3c6cb32503bf.html#.E9.99.84.E5.BD.954-.E5.8D.A1.E5.88.B8.E6.89.A9.E5.B1.95.E5.AD.97.E6.AE.B5.E5.8F.8A.E7.AD.BE.E5.90.8D.E7.94.9F.E6.88.90.E7.AE.97.E6.B3.95
          */
         private String card_ext;
@@ -836,11 +835,11 @@ public class CustomMessage implements Serializable {
          */
         private String title;
         /**
-         * 小程序的appid，要求小程序的appid需要与公众号有关联关系
+         * 小程序的 appid，要求小程序的 appid 需要与公众号有关联关系
          */
         private String appid;
         /**
-         * 小程序的页面路径，跟app.json对齐，支持参数，比如pages/index/index?foo=bar
+         * 小程序的页面路径，跟 app.json 对齐，支持参数，比如 pages/index/index?foo=bar
          */
         private String pagepath;
         /**

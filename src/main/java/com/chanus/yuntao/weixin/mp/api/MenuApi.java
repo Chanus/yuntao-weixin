@@ -71,7 +71,6 @@ public class MenuApi {
      *
      * @param json 自定义菜单数据的 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject createMenu(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -86,7 +85,6 @@ public class MenuApi {
      * 获取自定义菜单配置
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getCurrentSelfMenuInfo() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -101,7 +99,6 @@ public class MenuApi {
      * 获取菜单配置
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getMenuInfo() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -116,7 +113,6 @@ public class MenuApi {
      * 删除菜单
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject deleteMenu() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -132,7 +128,6 @@ public class MenuApi {
      *
      * @param json 个性化菜单数据的 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject addConditional(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -146,9 +141,8 @@ public class MenuApi {
     /**
      * 删除个性化菜单
      *
-     * @param menuId menuid为菜单id，可以通过自定义菜单查询接口获取
+     * @param menuId menuid 为菜单id，可以通过自定义菜单查询接口获取
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delConditional(String menuId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -165,9 +159,8 @@ public class MenuApi {
     /**
      * 测试个性化菜单匹配结果
      *
-     * @param userId user_id可以是粉丝的OpenID，也可以是粉丝的微信号
+     * @param userId user_id 可以是粉丝的 OpenID，也可以是粉丝的微信号
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject tryMatch(String userId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

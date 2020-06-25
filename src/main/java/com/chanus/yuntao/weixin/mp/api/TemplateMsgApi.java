@@ -90,7 +90,7 @@ public class TemplateMsgApi {
     /**
      * 获得模板ID
      *
-     * @param templateIdShort 模板库中模板的编号，有“TM**”和“OPENTMTM**”等形式
+     * @param templateIdShort 模板库中模板的编号，有 “TM**” 和 “OPENTMTM**” 等形式
      * @return 请求结果的 json 对象
      */
     public static JSONObject getTemplateId(String templateIdShort) {
@@ -122,7 +122,7 @@ public class TemplateMsgApi {
     /**
      * 删除模板
      *
-     * @param templateId 公众帐号下模板消息ID
+     * @param templateId 公众帐号下模板消息 ID
      * @return 请求结果的 json 对象
      */
     public static JSONObject delTemplate(String templateId) {

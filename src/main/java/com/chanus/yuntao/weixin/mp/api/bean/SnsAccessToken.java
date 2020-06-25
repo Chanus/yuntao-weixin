@@ -32,19 +32,19 @@ public class SnsAccessToken implements RetryUtils.ResultCheck, Serializable {
     private static final long serialVersionUID = -47064589821527845L;
 
     /**
-     * 网页授权接口调用凭证，注意：此access_token与基础支持的access_token不同
+     * 网页授权接口调用凭证，注意：此 access_token 与基础支持的 access_token 不同
      */
     private String access_token;
     /**
-     * access_token接口调用凭证超时时间，单位（秒）
+     * access_token 接口调用凭证超时时间，单位（秒）
      */
     private Integer expires_in;
     /**
-     * 用户刷新access_token
+     * 用户刷新 access_token
      */
     private String refresh_token;
     /**
-     * 用户唯一标识，请注意，在未关注公众号时，用户访问公众号的网页，也会产生一个用户和公众号唯一的OpenID
+     * 用户唯一标识，请注意，在未关注公众号时，用户访问公众号的网页，也会产生一个用户和公众号唯一的 OpenID
      */
     private String openid;
     /**
@@ -102,7 +102,7 @@ public class SnsAccessToken implements RetryUtils.ResultCheck, Serializable {
     /**
      * 验证 access_token 是否有效
      *
-     * @return 返回{@code true} access_token 有效，返回{@code false} access_token 无效
+     * @return 返回 {@code true} access_token 有效，返回 {@code false} access_token 无效
      */
     public boolean isAvailable() {
         if (errcode != null || expiredTime == null || expiredTime < System.currentTimeMillis())

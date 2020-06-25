@@ -41,7 +41,6 @@ public class CallbackIpApi {
      * 获取设置的行业信息
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getCallBackIp() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -56,7 +55,6 @@ public class CallbackIpApi {
      * 获取设置的行业信息
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getApiIp() {
         String accessToken = AccessTokenApi.getAccessTokenStr();

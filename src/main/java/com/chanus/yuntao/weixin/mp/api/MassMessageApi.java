@@ -77,7 +77,6 @@ public class MassMessageApi {
      *
      * @param json 群发消息数据 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject massOpenIdSend(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -91,10 +90,9 @@ public class MassMessageApi {
     /**
      * 删除群发【订阅号与服务号认证后均可用】
      *
-     * @param msgId      发送出去的消息ID
+     * @param msgId      发送出去的消息 ID
      * @param articleIdx 要删除的文章在图文消息中的位置，第一篇编号为1，该字段不填或填0会删除全部文章
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject delete(Long msgId, Integer articleIdx) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -114,7 +112,6 @@ public class MassMessageApi {
      *
      * @param json 群发消息数据 json 字符串
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject preview(String json) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -128,9 +125,8 @@ public class MassMessageApi {
     /**
      * 预览接口【订阅号与服务号认证后均可用】
      *
-     * @param msgId 群发消息后返回的消息id
+     * @param msgId 群发消息后返回的消息 id
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject get(Long msgId) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -148,7 +144,6 @@ public class MassMessageApi {
      * 获取群发速度
      *
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject getMassSpeed() {
         String accessToken = AccessTokenApi.getAccessTokenStr();
@@ -164,7 +159,6 @@ public class MassMessageApi {
      *
      * @param speed 群发速度的级别，是一个0到4的整数，数字越大表示群发速度越慢
      * @return 请求结果的 json 对象
-     * @since 1.0.0
      */
     public static JSONObject setMassSpeed(Integer speed) {
         String accessToken = AccessTokenApi.getAccessTokenStr();

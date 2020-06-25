@@ -77,7 +77,7 @@ public class MediaArticle implements Serializable {
          */
         private String title;
         /**
-         * 图文消息的封面图片素材id（必须是永久mediaID）
+         * 图文消息的封面图片素材 id（必须是永久 mediaID）
          */
         private String thumb_media_id;
         /**
@@ -89,15 +89,15 @@ public class MediaArticle implements Serializable {
          */
         private String digest;
         /**
-         * 是否显示封面，0为false，即不显示，1为true，即显示
+         * 是否显示封面，0为 false，即不显示，1为 true，即显示
          */
         private Integer show_cover_pic;
         /**
-         * 图文消息的具体内容，支持HTML标签，必须少于2万字符，小于1M，且此处会去除JS，涉及图片url必须来源"上传图文消息内的图片获取URL"接口获取。外部图片url将被过滤
+         * 图文消息的具体内容，支持 HTML 标签，必须少于2万字符，小于1M，且此处会去除JS，涉及图片 url 必须来源"上传图文消息内的图片获取 URL "接口获取。外部图片 url 将被过滤
          */
         private String content;
         /**
-         * 图文消息的原文地址，即点击“阅读原文”后的URL
+         * 图文消息的原文地址，即点击“阅读原文”后的 URL
          */
         private String content_source_url;
         /**
