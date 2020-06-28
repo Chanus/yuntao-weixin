@@ -17,10 +17,15 @@ package com.chanus.yuntao.weixin.mp.api;
 
 import com.chanus.yuntao.utils.core.HttpUtils;
 import com.chanus.yuntao.utils.core.RetryUtils;
+import com.chanus.yuntao.utils.core.StringUtils;
+import com.chanus.yuntao.utils.core.encrypt.SHAUtils;
 import com.chanus.yuntao.weixin.mp.api.bean.JsTicket;
+import com.chanus.yuntao.weixin.mp.api.bean.Signature;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * JS-SDK API<br>
@@ -97,5 +102,44 @@ public class JsTicketApi {
      */
     public static String getWxCardTicketStr() {
         return getWxCardTicket().getTicket();
+    }
+
+    /**
+     * JS-SDK 使用权限签名生成
+     *
+     * @param signature 签名参数
+     * @return {@link Signature}
+     */
+    public static Signature signature(Signature signature) {
+        String string = "jsapi_ticket=" + signature.getTicket() + "&noncestr=" + signature.getNonceStr() +
+                "&timestamp=" + signature.getTimestamp() + "&url=" + signature.getUrl();
+        String sign = SHAUtils.sha1(string);
+
+        return signature.setSignature(sign);
+    }
+
+    /**
+     * 卡券签名生成
+     *
+     * @param signature 签名参数
+     * @return {@link Signature}
+     */
+    public static Signature cardSign(Signature signature) {
+        Set<String> set = new TreeSet<>();
+        if (StringUtils.isNotBlank(signature.getOpenId()))
+            set.add(signature.getOpenId());
+        set.add(signature.getTicket());
+        set.add(signature.getCardId());
+        set.add(signature.getNonceStr());
+        set.add(signature.getTimestamp());
+        if (StringUtils.isNotBlank(signature.getCode()))
+            set.add(signature.getCode());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        set.forEach(stringBuilder::append);
+
+        String sign = SHAUtils.sha1(stringBuilder.toString());
+
+        return signature.setSignature(sign);
     }
 }
