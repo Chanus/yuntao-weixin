@@ -20,6 +20,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.chanus.yuntao.utils.core.HttpUtils;
 import com.chanus.yuntao.weixin.mp.api.bean.MediaArticle;
 import com.chanus.yuntao.weixin.mp.api.bean.MediaTypeEnum;
+import com.chanus.yuntao.weixin.utils.UploadUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -107,7 +108,7 @@ public class MediaApi {
         String accessToken = AccessTokenApi.getAccessTokenStr();
         String url = UPLOAD_MEDIA_URL.replace("ACCESS_TOKEN", accessToken).replace("TYPE", mediaType.get());
 
-        String result = HttpUtils.upload(url, file);
+        String result = UploadUtils.upload(url, file);
 
         return JSON.parseObject(result);
     }
@@ -192,7 +193,7 @@ public class MediaApi {
         String accessToken = AccessTokenApi.getAccessTokenStr();
         String url = UPLOAD_IMG_URL.replace("ACCESS_TOKEN", accessToken);
 
-        String result = HttpUtils.upload(url, file);
+        String result = UploadUtils.upload(url, file);
 
         return JSON.parseObject(result);
     }
@@ -209,7 +210,7 @@ public class MediaApi {
         String accessToken = AccessTokenApi.getAccessTokenStr();
         String url = ADD_MATERIAL_URL.replace("ACCESS_TOKEN", accessToken).replace("TYPE", mediaType.get());
 
-        String result = HttpUtils.upload(url, file);
+        String result = UploadUtils.upload(url, file);
 
         return JSON.parseObject(result);
     }
@@ -230,7 +231,7 @@ public class MediaApi {
         jsonObject.put("title", title);
         jsonObject.put("introduction", introduction);
 
-        String result = HttpUtils.upload(url, jsonObject.toJSONString(), file);
+        String result = UploadUtils.upload(url, file, jsonObject.toJSONString());
 
         return JSON.parseObject(result);
     }
