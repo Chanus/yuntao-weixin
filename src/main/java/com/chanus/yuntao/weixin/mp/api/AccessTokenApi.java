@@ -80,6 +80,10 @@ public class AccessTokenApi {
      * @return 获取到的凭证
      */
     public static String getAccessTokenStr() {
+        AccessToken accessToken = getAccessToken();
+        if (StringUtils.isBlank(accessToken.getAccessToken()))
+            throw new RuntimeException(accessToken.getErrMsg());
+
         return getAccessToken().getAccessToken();
     }
 
