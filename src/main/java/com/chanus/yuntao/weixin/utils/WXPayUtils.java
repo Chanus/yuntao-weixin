@@ -73,10 +73,10 @@ public class WXPayUtils {
      * @param strXML XML 字符串
      * @return XML 数据转换后的 Map
      */
-    public static Map<String, String> xmlToMap(String strXML) {
+    public static Map<String, Object> xmlToMap(String strXML) {
         InputStream stream = null;
         try {
-            Map<String, String> data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>();
             DocumentBuilder documentBuilder = newDocumentBuilder();
             stream = new ByteArrayInputStream(strXML.getBytes(StandardCharsets.UTF_8));
             Document doc = documentBuilder.parse(stream);
@@ -104,14 +104,14 @@ public class WXPayUtils {
      * @param map Map 类型数据
      * @return XML 格式的字符串
      */
-    public static String mapToXml(Map<String, String> map) {
+    public static String mapToXml(Map<String, Object> map) {
         StringWriter writer = new StringWriter();
         try {
             org.w3c.dom.Document document = newDocument();
             org.w3c.dom.Element root = document.createElement("xml");
             document.appendChild(root);
             for (String key : map.keySet()) {
-                String value = map.get(key);
+                String value = map.get(key).toString();
                 if (value == null) {
                     value = "";
                 }
@@ -142,7 +142,7 @@ public class WXPayUtils {
      * @param key API 密钥
      * @return 含有 sign 字段的 XML
      */
-    public static String generateSignedXml(final Map<String, String> map, String key) {
+    public static String generateSignedXml(final Map<String, Object> map, String key) {
         return generateSignedXml(map, key, WXPayConstants.MD5);
     }
 
@@ -154,7 +154,7 @@ public class WXPayUtils {
      * @param signType 签名类型
      * @return 含有 sign 字段的 XML
      */
-    public static String generateSignedXml(final Map<String, String> map, String key, String signType) {
+    public static String generateSignedXml(final Map<String, Object> map, String key, String signType) {
         String sign = generateSignature(map, key, signType);
         map.put(WXPayConstants.FIELD_SIGN, sign);
         return mapToXml(map);
@@ -169,11 +169,11 @@ public class WXPayUtils {
      * @return 签名是否正确，{@code true} 签名正确，{@code false} 签名不正确
      */
     public static boolean isSignatureValid(String xmlStr, String key) {
-        Map<String, String> map = xmlToMap(xmlStr);
+        Map<String, Object> map = xmlToMap(xmlStr);
         if (!map.containsKey(WXPayConstants.FIELD_SIGN)) {
             return false;
         }
-        String sign = map.get(WXPayConstants.FIELD_SIGN);
+        String sign = map.get(WXPayConstants.FIELD_SIGN).toString();
         return generateSignature(map, key).equals(sign);
     }
 
@@ -184,7 +184,7 @@ public class WXPayUtils {
      * @param key API 密钥
      * @return 签名是否正确，{@code true} 签名正确，{@code false} 签名不正确
      */
-    public static boolean isSignatureValid(Map<String, String> map, String key) {
+    public static boolean isSignatureValid(Map<String, Object> map, String key) {
         return isSignatureValid(map, key, WXPayConstants.MD5);
     }
 
@@ -196,11 +196,11 @@ public class WXPayUtils {
      * @param signType 签名方式
      * @return 签名是否正确，{@code true} 签名正确，{@code false} 签名不正确
      */
-    public static boolean isSignatureValid(Map<String, String> map, String key, String signType) {
+    public static boolean isSignatureValid(Map<String, Object> map, String key, String signType) {
         if (!map.containsKey(WXPayConstants.FIELD_SIGN)) {
             return false;
         }
-        String sign = map.get(WXPayConstants.FIELD_SIGN);
+        String sign = map.get(WXPayConstants.FIELD_SIGN).toString();
         return generateSignature(map, key, signType).equals(sign);
     }
 
@@ -211,7 +211,7 @@ public class WXPayUtils {
      * @param key API密钥
      * @return 签名
      */
-    public static String generateSignature(final Map<String, String> map, String key) {
+    public static String generateSignature(final Map<String, Object> map, String key) {
         return generateSignature(map, key, WXPayConstants.MD5);
     }
 
@@ -223,7 +223,7 @@ public class WXPayUtils {
      * @param signType 签名方式
      * @return 签名
      */
-    public static String generateSignature(final Map<String, String> map, String key, String signType) {
+    public static String generateSignature(final Map<String, Object> map, String key, String signType) {
         Set<String> keySet = map.keySet();
         String[] keyArray = keySet.toArray(new String[0]);
         Arrays.sort(keyArray);
@@ -232,8 +232,8 @@ public class WXPayUtils {
             if (k.equals(WXPayConstants.FIELD_SIGN)) {
                 continue;
             }
-            if (StringUtils.isNotBlank(map.get(k))) // 参数值为空，则不参与签名
-                sb.append(k).append("=").append(map.get(k).trim()).append("&");
+            if (StringUtils.isNotBlank(map.get(k).toString())) // 参数值为空，则不参与签名
+                sb.append(k).append("=").append(map.get(k).toString().trim()).append("&");
         }
         sb.append("key=").append(key);
         if (WXPayConstants.MD5.equals(signType)) {

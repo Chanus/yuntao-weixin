@@ -32,7 +32,7 @@ import java.util.Map;
 public class WXPayUtilsTest {
     @Test
     public void mapToXmlTest() {
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("appid", "wx2421b1c4370ec43b");
         map.put("attach", "支付测试");
         map.put("body", "JSAPI支付测试");
@@ -52,7 +52,7 @@ public class WXPayUtilsTest {
 
     @Test
     public void generateSignedXmlTest() {
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("appid", "wx2421b1c4370ec43b");
         map.put("attach", "支付测试");
         map.put("body", "JSAPI支付测试");
@@ -93,7 +93,7 @@ public class WXPayUtilsTest {
                 "</xml>";
         System.out.println(WXPayUtils.isSignatureValid(xmlStr, key));
 
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("appid", "wx2421b1c4370ec43b");
         map.put("attach", "支付测试");
         map.put("body", "JSAPI支付测试");
@@ -115,7 +115,7 @@ public class WXPayUtilsTest {
     @Test
     public void generateSignatureTest() {
         String key = "123456789";
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("appid", "wx2421b1c4370ec43b");
         map.put("attach", "支付测试");
         map.put("body", "JSAPI支付测试");

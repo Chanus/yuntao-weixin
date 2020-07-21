@@ -16,7 +16,7 @@
 package com.chanus.yuntao.weixin.pay;
 
 import com.chanus.yuntao.utils.core.HttpUtils;
-import com.chanus.yuntao.weixin.pay.constants.WXPayConstants;
+import com.chanus.yuntao.weixin.pay.request.WXPayOrderQueryRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayUnifiedorderRequest;
 import com.chanus.yuntao.weixin.utils.WXPayUtils;
 
@@ -32,14 +32,35 @@ import java.util.Map;
  */
 public class WXPayApi {
     /**
+     * 统一下单 url，请求方式为 POST
+     */
+    private static final String UNIFIED_ORDER_URL = "https://api.mch.weixin.qq.com/pay/unifiedorder";
+    /**
+     * 查询订单 url，请求方式为 POST
+     */
+    private static final String ORDER_QUERY_URL = "https://api.mch.weixin.qq.com/pay/orderquery";
+
+    /**
      * 统一下单
      *
      * @param wxPayUnifiedorderRequest 请求参数
      * @param key                      API 密钥
      * @return 请求返回结果
      */
-    public static Map<String, String> unifiedOrder(WXPayUnifiedorderRequest wxPayUnifiedorderRequest, String key) {
-        String result = HttpUtils.post(WXPayConstants.DOMAIN_API + WXPayConstants.UNIFIEDORDER_URL_SUFFIX, wxPayUnifiedorderRequest.toSignedXml(key));
+    public static Map<String, Object> unifiedOrder(WXPayUnifiedorderRequest wxPayUnifiedorderRequest, String key) {
+        String result = HttpUtils.post(UNIFIED_ORDER_URL, wxPayUnifiedorderRequest.toSignedXml(key));
+        return WXPayUtils.xmlToMap(result);
+    }
+
+    /**
+     * 查询订单
+     *
+     * @param wxPayOrderQueryRequest 请求参数
+     * @param key                    API 密钥
+     * @return 请求返回结果
+     */
+    public static Map<String, Object> orderQuery(WXPayOrderQueryRequest wxPayOrderQueryRequest, String key) {
+        String result = HttpUtils.post(ORDER_QUERY_URL, wxPayOrderQueryRequest.toSignedXml(key));
         return WXPayUtils.xmlToMap(result);
     }
 }

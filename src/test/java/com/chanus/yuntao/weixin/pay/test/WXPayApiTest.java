@@ -19,6 +19,7 @@ import com.chanus.yuntao.utils.core.RandomUtils;
 import com.chanus.yuntao.weixin.pay.WXPayApi;
 import com.chanus.yuntao.weixin.pay.constants.WXPayConstants;
 import com.chanus.yuntao.weixin.pay.enums.TradeTypeEnum;
+import com.chanus.yuntao.weixin.pay.request.WXPayOrderQueryRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayUnifiedorderRequest;
 import org.junit.Test;
 
@@ -44,8 +45,8 @@ public class WXPayApiTest {
                 .setNotify_url("http://wxpay.wxutil.com/pub_v2/pay/notify.v2.php")
                 .setTrade_type(TradeTypeEnum.JSAPI.name())
                 .setOpenid("oThyXtzi1FqPfKfM4MQYX51_c9ng");
-        Map<String, String> map = wxPayUnifiedorderRequest.toMap();
-        map.forEach((k, v) -> System.out.println(k + "===" + v));
+        Map<String, Object> map = wxPayUnifiedorderRequest.toMap();
+        map.forEach((k, v) -> System.out.println(k + "===" + v.toString()));
 
         System.out.println("---------------------------------------------------------------");
         System.out.println(wxPayUnifiedorderRequest.toXml());
@@ -56,18 +57,33 @@ public class WXPayApiTest {
 
     @Test
     public void unifiedOrderTest() {
+        String orderId = RandomUtils.getRandomUniqueNo();
+        System.out.println("orderId = " + orderId);
         WXPayUnifiedorderRequest wxPayUnifiedorderRequest = WXPayUnifiedorderRequest.create()
                 .setAppid("wx4c0b9bf56ed6df6a").setMch_id("1497389862")
                 .setNonce_str(RandomUtils.getRandomNormalString(32))
                 .setSign_type(WXPayConstants.HMACSHA256).setBody("JSAPI支付测试")
-                .setAttach("支付测试").setOut_trade_no(RandomUtils.getRandomUniqueNo())
+                .setAttach("支付测试").setOut_trade_no(orderId)
                 .setTotal_fee("10000").setSpbill_create_ip("127.0.0.1")
                 .setNotify_url("http://wxpay.wxutil.com/pub_v2/pay/notify.v2.php")
                 .setTrade_type(TradeTypeEnum.JSAPI.name())
                 .setOpenid("oThyXtzi1FqPfKfM4MQYX51_c9ng");
         String key = "172b42814464710cf4210d8ca87bf0d6";
 
-        Map<String, String> result = WXPayApi.unifiedOrder(wxPayUnifiedorderRequest, key);
+        Map<String, Object> result = WXPayApi.unifiedOrder(wxPayUnifiedorderRequest, key);
+        result.forEach((k, v) -> System.out.println(k + "===" + v));
+    }
+
+    @Test
+    public void orderQueryTest() {
+        WXPayOrderQueryRequest wxPayOrderQueryRequest = WXPayOrderQueryRequest.create()
+                .setAppid("wx4c0b9bf56ed6df6a").setMch_id("1497389862")
+                .setTransaction_id("159534818615249485")
+                .setNonce_str(RandomUtils.getRandomNormalString(32))
+                .setSign_type(WXPayConstants.HMACSHA256);
+        String key = "172b42814464710cf4210d8ca87bf0d6";
+
+        Map<String, Object> result = WXPayApi.orderQuery(wxPayOrderQueryRequest, key);
         result.forEach((k, v) -> System.out.println(k + "===" + v));
     }
 }
