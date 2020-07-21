@@ -16,12 +16,27 @@
 package com.chanus.yuntao.weixin.pay.enums;
 
 /**
- * 签名方式
+ * 交易类型
  *
  * @author Chanus
- * @date 2020-07-19 15:22:37
+ * @date 2020-07-21 10:06:36
  * @since 1.1.0
  */
-public enum SignTypeEnum {
-    MD5, HMACSHA256
+public enum TradeTypeEnum {
+    /**
+     * JSAPI 支付（或小程序支付）
+     */
+    JSAPI,
+    /**
+     * H5 支付
+     */
+    MWEB,
+    /**
+     * Native 支付
+     */
+    NATIVE,
+    /**
+     * app 支付
+     */
+    APP
 }

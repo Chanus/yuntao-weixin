@@ -22,7 +22,7 @@ package com.chanus.yuntao.weixin.pay.config;
  * @date 2020-07-19 15:30:10
  * @since 1.1.0
  */
-public class WxPayConfig {
+public class WXPayConfig {
     /**
      * 公众号 appId
      */

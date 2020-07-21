@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.chanus.yuntao.weixin.mp.utils.test;
+package com.chanus.yuntao.weixin.utils.test;
 
 import com.chanus.yuntao.weixin.utils.XMLParse;
 import org.junit.Test;

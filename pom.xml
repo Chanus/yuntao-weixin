@@ -23,7 +23,7 @@
     <!-- 读写XML -->
     <dom4j.version>1.6.1</dom4j.version>
     <!-- 云道工具类 -->
-    <yuntao.utils.version>1.0.0</yuntao.utils.version>
+    <yuntao.utils.version>1.0.1</yuntao.utils.version>
     <!-- 单元测试 -->
     <junit.version>4.12</junit.version>
   </properties>
