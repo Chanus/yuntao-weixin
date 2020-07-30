@@ -21,13 +21,13 @@ import com.chanus.yuntao.weixin.utils.WXPayUtils;
 import java.util.Map;
 
 /**
- * 订单查询请求参数
+ * 关闭订单请求参数
  *
  * @author Chanus
- * @date 2020-07-21 22:39:41
+ * @date 2020-07-24 14:22:40
  * @since 1.1.0
  */
-public class WXPayOrderQueryRequest {
+public class WXPayOrderCloseRequest {
     /**
      * 公众账号 ID。微信支付分配的公众账号 ID（企业号 corpid 即为此 appId）
      */
@@ -36,10 +36,6 @@ public class WXPayOrderQueryRequest {
      * 商户号。微信支付分配的商户号
      */
     private String mch_id;
-    /**
-     * 微信订单号。微信的订单号，建议优先使用
-     */
-    private String transaction_id;
     /**
      * 商户订单号。商户系统内部订单号，要求32个字符内，只能是数字、大小写字母 _-|*@，且在同一个商户号下唯一
      */
@@ -54,12 +50,12 @@ public class WXPayOrderQueryRequest {
     private String sign_type;
 
     /**
-     * 创建一个 WXPayOrderQueryRequest 的对象实例
+     * 创建一个 WXPayOrderCloseRequest 的对象实例
      *
-     * @return WXPayOrderQueryRequest 的对象实例
+     * @return WXPayOrderCloseRequest 的对象实例
      */
-    public static WXPayOrderQueryRequest create() {
-        return new WXPayOrderQueryRequest();
+    public static WXPayOrderCloseRequest create() {
+        return new WXPayOrderCloseRequest();
     }
 
     /**
@@ -94,7 +90,7 @@ public class WXPayOrderQueryRequest {
         return appid;
     }
 
-    public WXPayOrderQueryRequest setAppid(String appid) {
+    public WXPayOrderCloseRequest setAppid(String appid) {
         this.appid = appid;
         return this;
     }
@@ -103,17 +99,8 @@ public class WXPayOrderQueryRequest {
         return mch_id;
     }
 
-    public WXPayOrderQueryRequest setMch_id(String mch_id) {
+    public WXPayOrderCloseRequest setMch_id(String mch_id) {
         this.mch_id = mch_id;
-        return this;
-    }
-
-    public String getTransaction_id() {
-        return transaction_id;
-    }
-
-    public WXPayOrderQueryRequest setTransaction_id(String transaction_id) {
-        this.transaction_id = transaction_id;
         return this;
     }
 
@@ -121,7 +108,7 @@ public class WXPayOrderQueryRequest {
         return out_trade_no;
     }
 
-    public WXPayOrderQueryRequest setOut_trade_no(String out_trade_no) {
+    public WXPayOrderCloseRequest setOut_trade_no(String out_trade_no) {
         this.out_trade_no = out_trade_no;
         return this;
     }
@@ -130,7 +117,7 @@ public class WXPayOrderQueryRequest {
         return nonce_str;
     }
 
-    public WXPayOrderQueryRequest setNonce_str(String nonce_str) {
+    public WXPayOrderCloseRequest setNonce_str(String nonce_str) {
         this.nonce_str = nonce_str;
         return this;
     }
@@ -139,17 +126,16 @@ public class WXPayOrderQueryRequest {
         return sign_type;
     }
 
-    public WXPayOrderQueryRequest setSign_type(String sign_type) {
+    public WXPayOrderCloseRequest setSign_type(String sign_type) {
         this.sign_type = sign_type;
         return this;
     }
 
     @Override
     public String toString() {
-        return "WXPayOrderQueryRequest{" +
+        return "WXPayOrderCloseRequest{" +
                 "appid=" + appid +
                 ", mch_id=" + mch_id +
-                ", transaction_id=" + transaction_id +
                 ", out_trade_no=" + out_trade_no +
                 ", nonce_str=" + nonce_str +
                 ", sign_type=" + sign_type +

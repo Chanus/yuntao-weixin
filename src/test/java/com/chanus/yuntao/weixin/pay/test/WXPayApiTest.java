@@ -19,6 +19,7 @@ import com.chanus.yuntao.utils.core.RandomUtils;
 import com.chanus.yuntao.weixin.pay.WXPayApi;
 import com.chanus.yuntao.weixin.pay.constants.WXPayConstants;
 import com.chanus.yuntao.weixin.pay.enums.TradeTypeEnum;
+import com.chanus.yuntao.weixin.pay.request.WXPayOrderCloseRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayOrderQueryRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayUnifiedorderRequest;
 import org.junit.Test;
@@ -84,6 +85,19 @@ public class WXPayApiTest {
         String key = "172b42814464710cf4210d8ca87bf0d6";
 
         Map<String, Object> result = WXPayApi.orderQuery(wxPayOrderQueryRequest, key);
+        result.forEach((k, v) -> System.out.println(k + "===" + v));
+    }
+
+    @Test
+    public void orderCloseTest() {
+        WXPayOrderCloseRequest wxPayOrderCloseRequest = WXPayOrderCloseRequest.create()
+                .setAppid("wx4c0b9bf56ed6df6a").setMch_id("1497389862")
+                .setOut_trade_no("159547539613120225")
+                .setNonce_str(RandomUtils.getRandomNormalString(32))
+                .setSign_type(WXPayConstants.MD5);
+        String key = "172b42814464710cf4210d8ca87bf0d6";
+
+        Map<String, Object> result = WXPayApi.orderClose(wxPayOrderCloseRequest, key);
         result.forEach((k, v) -> System.out.println(k + "===" + v));
     }
 }

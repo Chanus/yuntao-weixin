@@ -16,6 +16,7 @@
 package com.chanus.yuntao.weixin.pay;
 
 import com.chanus.yuntao.utils.core.HttpUtils;
+import com.chanus.yuntao.weixin.pay.request.WXPayOrderCloseRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayOrderQueryRequest;
 import com.chanus.yuntao.weixin.pay.request.WXPayUnifiedorderRequest;
 import com.chanus.yuntao.weixin.utils.WXPayUtils;
@@ -39,6 +40,10 @@ public class WXPayApi {
      * 查询订单 url，请求方式为 POST
      */
     private static final String ORDER_QUERY_URL = "https://api.mch.weixin.qq.com/pay/orderquery";
+    /**
+     * 关闭订单 url，请求方式为 POST
+     */
+    private static final String CLOSE_ORDER_URL = "https://api.mch.weixin.qq.com/pay/closeorder";
 
     /**
      * 统一下单
@@ -61,6 +66,18 @@ public class WXPayApi {
      */
     public static Map<String, Object> orderQuery(WXPayOrderQueryRequest wxPayOrderQueryRequest, String key) {
         String result = HttpUtils.post(ORDER_QUERY_URL, wxPayOrderQueryRequest.toSignedXml(key));
+        return WXPayUtils.xmlToMap(result);
+    }
+
+    /**
+     * 关闭订单
+     *
+     * @param wxPayOrderCloseRequest 请求参数
+     * @param key                    API 密钥
+     * @return 请求返回结果
+     */
+    public static Map<String, Object> orderClose(WXPayOrderCloseRequest wxPayOrderCloseRequest, String key) {
+        String result = HttpUtils.post(CLOSE_ORDER_URL, wxPayOrderCloseRequest.toSignedXml(key));
         return WXPayUtils.xmlToMap(result);
     }
 }
