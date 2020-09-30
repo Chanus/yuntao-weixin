@@ -52,7 +52,7 @@ public class MediaApiTest extends WXConfigTest {
     public void getMediaTest() {
         String mediaId = "F82bqOAuMBz2Cv_tFIGA0y1UeUiP3yKEfy9B9W4uvzwzxv9Ab-g_3yca0kCpLoHf";
         BufferedInputStream bufferedInputStream = MediaApi.getMedia(mediaId);
-        FileUtils.write("/Users/Chanus/Documents/img.jpg", bufferedInputStream, false);
+        FileUtils.writeFromStream("/Users/Chanus/Documents/img.jpg", bufferedInputStream, false);
 
         File file = MediaApi.getMedia(mediaId, "/Users/Chanus/Documents/mp");
         System.out.println(file.getName());
@@ -62,7 +62,7 @@ public class MediaApiTest extends WXConfigTest {
     public void getJsSdkMediaTest() {
         String mediaId = "KKjUQf5L3TbtcsLRbvFNjlmEmH_O0awvtymGHDC8sL828b13utwZpZMlGDDYj4L-";
         BufferedInputStream bufferedInputStream = MediaApi.getJsSdkMedia(mediaId);
-        FileUtils.write("/Users/Chanus/Documents/voice.mp3", bufferedInputStream, false);
+        FileUtils.writeFromStream("/Users/Chanus/Documents/voice.mp3", bufferedInputStream, false);
         File file = MediaApi.getJsSdkMedia(mediaId, "/Users/Chanus/Documents/mp");
         System.out.println(file.getName());
     }
@@ -113,9 +113,9 @@ public class MediaApiTest extends WXConfigTest {
     public void getMaterialTest() {
         String mediaId = "BoD9IkOKVe0sSTnFOvPnnqfTAFUUl5XDvUPuT_oHtgw";
         BufferedInputStream bufferedInputStream = MediaApi.getMaterial(mediaId);
-        FileUtils.write("/Users/Chanus/Documents/img.jpg", bufferedInputStream, false);
+        FileUtils.writeFromStream("F:\\Documents\\img.jpg", bufferedInputStream, false);
 
-        File file = MediaApi.getMaterial(mediaId, "/Users/Chanus/Documents/mp");
+        File file = MediaApi.getMaterial(mediaId, "F:\\Documents\\mp", "img.jpg");
         System.out.println(file.getName());
     }
 

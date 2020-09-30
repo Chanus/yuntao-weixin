@@ -141,6 +141,21 @@ public class MediaApi {
     }
 
     /**
+     * 获取临时素材
+     *
+     * @param mediaId  媒体文件 ID
+     * @param path     媒体文件保存路径
+     * @param fileName 媒体文件名称，若不带扩展名，则默认为下载文件的类型
+     * @return 临时素材文件
+     */
+    public static File getMedia(String mediaId, String path, String fileName) {
+        String accessToken = AccessTokenApi.getAccessTokenStr();
+        String url = GET_MEDIA_URL.replace("ACCESS_TOKEN", accessToken).replace("MEDIA_ID", mediaId);
+
+        return HttpUtils.downloadGet(url, path, fileName);
+    }
+
+    /**
      * 获取高清语音素材
      *
      * @param mediaId 媒体文件 ID
@@ -165,6 +180,21 @@ public class MediaApi {
         String url = GET_JSSDK_MEDIA_URL.replace("ACCESS_TOKEN", accessToken).replace("MEDIA_ID", mediaId);
 
         return HttpUtils.downloadGet(url, path);
+    }
+
+    /**
+     * 获取高清语音素材
+     *
+     * @param mediaId  媒体文件 ID
+     * @param path     媒体文件保存路径
+     * @param fileName 媒体文件名称，若不带扩展名，则默认为下载文件的类型
+     * @return 高清语音素材文件
+     */
+    public static File getJsSdkMedia(String mediaId, String path, String fileName) {
+        String accessToken = AccessTokenApi.getAccessTokenStr();
+        String url = GET_JSSDK_MEDIA_URL.replace("ACCESS_TOKEN", accessToken).replace("MEDIA_ID", mediaId);
+
+        return HttpUtils.downloadGet(url, path, fileName);
     }
 
     /**
@@ -255,18 +285,19 @@ public class MediaApi {
     /**
      * 获取永久素材
      *
-     * @param mediaId 要获取的素材的 media_id
-     * @param path    获取的素材的保存路径
+     * @param mediaId  要获取的素材的 media_id
+     * @param path     获取的素材的保存路径
+     * @param fileName 获取的素材的名称，若不带扩展名，则默认为下载文件的类型
      * @return 永久素材文件
      */
-    public static File getMaterial(String mediaId, String path) {
+    public static File getMaterial(String mediaId, String path, String fileName) {
         String accessToken = AccessTokenApi.getAccessTokenStr();
         String url = GET_MATERIAL_URL.replace("ACCESS_TOKEN", accessToken);
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("media_id", mediaId);
 
-        return HttpUtils.downloadPost(url, jsonObject.toJSONString(), path);
+        return HttpUtils.downloadPost(url, jsonObject.toJSONString(), path, fileName);
     }
 
     /**
