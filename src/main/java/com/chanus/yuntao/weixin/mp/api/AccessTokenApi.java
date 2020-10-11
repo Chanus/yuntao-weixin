@@ -64,14 +64,13 @@ public class AccessTokenApi {
         String url = TOKEN_URL.replace("APPID", wxConfig.getAppId()).replace("APPSECRET", wxConfig.getAppSecret());
         // 发起 GET 请求获取凭证
         String result = HttpUtils.get(url);
-        AccessToken token = null;
         if (StringUtils.isNotBlank(result)) {
-            token = new AccessToken(result);
+            accessToken = new AccessToken(result);
         }
-        if (null == token || !token.isAvailable())
-            token = refreshAccessToken();
+        if (accessToken == null || !accessToken.isAvailable())
+            accessToken = refreshAccessToken();
 
-        return token;
+        return accessToken;
     }
 
     /**
