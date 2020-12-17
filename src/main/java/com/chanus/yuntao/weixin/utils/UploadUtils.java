@@ -17,11 +17,13 @@ package com.chanus.yuntao.weixin.utils;
 
 import com.chanus.yuntao.utils.core.HttpUtils;
 import com.chanus.yuntao.utils.core.IOUtils;
+import com.chanus.yuntao.utils.core.StreamUtils;
+import com.chanus.yuntao.utils.core.StringUtils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 /**
  * 文件上传工具类
@@ -51,39 +53,20 @@ public class UploadUtils {
      * @return 远程资源的响应结果
      */
     public static String upload(final String url, File file, final String description) {
-        StringBuilder result = new StringBuilder();// 返回的结果
         DataOutputStream dataOutputStream = null;
-        BufferedReader bufferedReader = null;// 读取响应输入流
+        HttpURLConnection connection = null;// URL 连接
 
         // 必须多两道线
         String twoHyphens = "--";
         // 边界
         String boundary = "*****";
         // 结尾
-        String end = "\r\n";
+        String end = StringUtils.CRLF;
         try {
-            // 创建URL对象
-            URL connURL = new URL(url);
-            // 打开URL连接
-            HttpURLConnection connection = (HttpURLConnection) connURL.openConnection();
-            // 设置通用属性，请求头信息
-            connection.setRequestProperty("Accept", "*/*");
-            connection.setRequestProperty("Connection", "Keep-Alive");
-            connection.setRequestProperty("Charset", "UTF-8");
-            connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
-            // 设定请求的方法，默认是GET
-            connection.setRequestMethod("POST");
-            // 设置是否向 connection 输出
-            connection.setDoOutput(true);
-            // 设置是否从 connection 读入，默认情况下是true
-            connection.setDoInput(true);
-            // POST 请求不能使用缓存
-            connection.setUseCaches(false);
-            connection.setInstanceFollowRedirects(true);
-            connection.setReadTimeout(60000);
-            connection.setConnectTimeout(60000);
-            // 建立实际的连接
-            connection.connect();
+            Map<String, String> headers = HttpUtils.initialBasicHeader();
+            headers.put("Charset", "UTF-8");
+            headers.put("Content-Type", "multipart/form-data; boundary=" + boundary);
+            connection = HttpUtils.getPostConnection(url, headers);
 
             // 获得输出流
             dataOutputStream = new DataOutputStream(connection.getOutputStream());
@@ -116,19 +99,12 @@ public class UploadUtils {
             dataOutputStream.flush();
 
             // 读取响应
-            // 定义BufferedReader输入流来读取URL的响应，并设置编码方式
-            bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
-            String line;
-            // 读取返回的内容
-            while ((line = bufferedReader.readLine()) != null) {
-                result.append(line);
-            }
+            return StreamUtils.read2String(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
         } catch (Exception e) {
             throw new RuntimeException("Request exception", e);
         } finally {
             IOUtils.close(dataOutputStream);
-            IOUtils.close(bufferedReader);
+            HttpUtils.closeConnection(connection);
         }
-        return result.toString();
     }
 }

@@ -38,7 +38,7 @@ public class MediaApiTest extends WXConfigTest {
         // File image = new File("/Users/Chanus/Documents/headimg.jpg");
         // JSONObject jsonObject = MediaApi.uploadMedia(image, MediaTypeEnum.IMAGE);
         // System.out.println(jsonObject.toJSONString());
-        //
+
         // File voice = new File("/Users/Chanus/Documents/feedback.mp3");
         // JSONObject jsonObject2 = MediaApi.uploadMedia(voice, MediaTypeEnum.VOICE);
         // System.out.println(jsonObject2.toJSONString());
@@ -56,6 +56,9 @@ public class MediaApiTest extends WXConfigTest {
 
         File file = MediaApi.getMedia(mediaId, "/Users/Chanus/Documents/mp");
         System.out.println(file.getName());
+
+        File file2 = MediaApi.getMedia(mediaId, "/Users/Chanus/Documents/mp", "img.jpg");
+        System.out.println(file2.getName());
     }
 
     @Test
@@ -103,7 +106,7 @@ public class MediaApiTest extends WXConfigTest {
         // File voice = new File("/Users/Chanus/Documents/feedback.mp3");
         // JSONObject jsonObject2 = MediaApi.addMaterial(voice, MediaTypeEnum.VOICE);
         // System.out.println(jsonObject2.toJSONString());
-        //
+
         // File video = new File("/Users/Chanus/Documents/video.mp4");
         // JSONObject jsonObject3 = MediaApi.addMaterial(video, "测试视频素材", "这是一个测试用的视频素材");
         // System.out.println(jsonObject3.toJSONString());
