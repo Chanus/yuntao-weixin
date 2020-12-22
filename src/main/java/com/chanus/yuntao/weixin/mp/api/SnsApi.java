@@ -23,8 +23,6 @@ import com.chanus.yuntao.utils.core.StringUtils;
 import com.chanus.yuntao.utils.core.UrlUtils;
 import com.chanus.yuntao.weixin.mp.api.bean.SnsAccessToken;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -74,11 +72,7 @@ public class SnsApi {
     public static String getAuthorizeURL(String redirectUri, boolean snsapiBase, String state) {
         Map<String, Object> params = new TreeMap<>();
         params.put("appid", AccessTokenApi.wxConfig.getAppId());
-        try {
-            params.put("redirect_uri", URLEncoder.encode(redirectUri, "utf-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        params.put("redirect_uri", redirectUri);
         params.put("response_type", "code");
         if (snsapiBase)
             params.put("scope", "snsapi_base");
@@ -112,11 +106,7 @@ public class SnsApi {
     public static String getQrConnectURL(String redirectUri, String state) {
         Map<String, Object> params = new TreeMap<>();
         params.put("appid", AccessTokenApi.wxConfig.getAppId());
-        try {
-            params.put("redirect_uri", URLEncoder.encode(redirectUri, "utf-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        params.put("redirect_uri", redirectUri);
         params.put("response_type", "code");
         params.put("scope", "snsapi_login");
         if (StringUtils.isNotBlank(state))
