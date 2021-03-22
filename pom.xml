@@ -6,7 +6,7 @@
 
   <groupId>com.chanus</groupId>
   <artifactId>yuntao-weixin</artifactId>
-  <version>1.1.6</version>
+  <version>1.1.7</version>
   <name>${project.artifactId}</name>
 
   <properties>
@@ -17,15 +17,15 @@
     <!-- 不执行测试用例，也不编译测试用例类 -->
     <maven.test.skip>true</maven.test.skip>
     <!-- 单元测试 -->
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.2</junit.version>
     <!-- JDK版本 -->
     <jdk.version>1.8</jdk.version>
     <!-- 阿里巴巴 Fast Json -->
-    <fastjson.version>1.2.68</fastjson.version>
+    <fastjson.version>1.2.75</fastjson.version>
     <!-- 读写XML -->
     <dom4j.version>1.6.1</dom4j.version>
     <!-- 云道工具类 -->
-    <yuntao.utils.version>1.4.6</yuntao.utils.version>
+    <yuntao.utils.version>1.5.0</yuntao.utils.version>
   </properties>
 
   <dependencies>
