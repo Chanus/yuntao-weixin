@@ -21,7 +21,7 @@
     <!-- JDK版本 -->
     <jdk.version>1.8</jdk.version>
     <!-- 阿里巴巴 Fast Json -->
-    <fastjson.version>1.2.75</fastjson.version>
+    <fastjson.version>1.2.83</fastjson.version>
     <!-- 读写XML -->
     <dom4j.version>1.6.1</dom4j.version>
     <!-- 云道工具类 -->
